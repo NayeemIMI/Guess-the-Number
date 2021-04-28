@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1" />
+		<meta name="HandheldFriendly" content="true" />
+		<link rel="stylesheet" href="style.css" />
+		<title>Guess the Number</title>
+	</head>
+	<body>
+		<header>
+			<h1>Guess the Number</h1>
+			<p class="between">(Amidst 1 to 50)</p>
+			<button class="btn again">Play Again</button>
+			<div class="number">?</div>
+		</header>
+		<main>
+			<section class="left">
+				<input
+					type="number"
+					class="guess"
+					min="1"
+					max="50"
+					onkeypress="return event.charCode >= 48 && event.charCode <= 57"
+					onKeyUp="if(this.value>50){this.value='50';}else if(this.value===''){this.value=''}else if(this.value<1){this.value='1';}"
+				/>
+				<!--onKeyUp="if(this.value>50){this.value='50';}else if(this.value<1){this.value='1';}"
+					onkeypress="if (event.charCode == 46) {this.value=null;}"
+				 onkeypress="return if(event.charCode==8)this.value=``"
+					onKeyUp="if(this.value>50){this.value='50';}else if(this.value<1){this.value='1';}" -->
+				<button class="btn check">Check</button>
+			</section>
+			<section class="right">
+				<p class="message">Start Guessing!</p>
+				<p class="label-score">Score: <span class="score">20</span></p>
+				<p class="label-highscore">
+					Highscore: <span class="highscore">0</span>
+				</p>
+			</section>
+		</main>
+		<script src="script.js"></script>
+	</body>
+</html>
